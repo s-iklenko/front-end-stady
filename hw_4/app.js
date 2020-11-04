@@ -22,26 +22,6 @@ console.log(result);
 Найти колонку, где сумма элементов наименьшая.
 Найти колонку, где сумма элементов найбольшая.
 */
-
-// var mass = [];
-// for (var i = 0, size = 3; i < size; i++) {
-//     mass[i] = new Array(size);
-
-//     for (var j = 0; j < size; j++) {
-//         mass[i][j] = Math.round(Math.random() * 30)
-//     }
-// }
-// var columsSumms = []
-// for (var columnIndex = 0; columnIndex < mass.length; columnIndex++) {
-//     var columnSumm = 0
-//     for (var rowIndex = 0; rowIndex < mass.length; rowIndex++) {
-//         columnSumm += mass[rowIndex][columnIndex]
-//     }
-//     columsSumms.push(columnSumm)
-// }
-// console.log(mass)
-// console.log(columsSumms)
-
 // var array = [];
 // var columsSumms = []
 // for (var columIndex = 0, size = 3; columIndex < size; columIndex++) {
