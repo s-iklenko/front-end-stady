@@ -22,51 +22,20 @@ console.log(result);
 Найти колонку, где сумма элементов наименьшая.
 Найти колонку, где сумма элементов найбольшая.
 */
-// var array = [];
-// var columsSumms = []
-// for (var columIndex = 0, size = 3; columIndex < size; columIndex++) {
-//     array[columIndex] = new Array(size);
-//     for (var rowIndex = 0, columSum = 0; rowIndex < size; rowIndex++) {
-//         array[columIndex][rowIndex] = Math.round(Math.random() * 30)
-//         columSum += array[rowIndex][columIndex]
-//     }
-//     columsSumms.push(columSum)
-// }
-// console.log(array)
-// console.log(columsSumms)
+var array = [];
+var columsSumms = []
 
-var mass = [];
-for (var i = 0, size = 3; i < size; i++) {
-    mass[i] = new Array(size);
+for (var columIndex = 0, size = 3; columIndex < size; columIndex++) {
+    array[columIndex] = new Array(size);
 
-    for (var j = 0; j < size; j++) {
-        mass[i][j] = Math.round(Math.random() * 30)
+    for (var rowIndex = 0, columSum = 0; rowIndex < size; rowIndex++) {
+        array[columIndex][rowIndex] = Math.round(Math.random() * 30)
+        columSum = array.reduce((a, b) => a.map((x, i) => x + b[i]));
     }
 }
-
-console.log(mass)
-
-for (var i = 0, size = mass.length; i < size; i++) {
-    for (var j = 0, sum = 0; j < mass.length; j++) {
-        sum = sum + mass[j][i]
-    }
-    console.log(sum)
-    if (i === 0) {
-        sumMin = sum;
-        sumMax = sum;
-        continue;
-    }
-
-    if (sum < sumMin) {
-        sumMin = sum;
-    }
-
-    if (sum > sumMax) {
-        sumMax = sum;
-    }
-}
-
-console.log(sumMin);
-console.log(sumMax);
+console.log(array);
+console.log(columSum);
+console.log(Math.max.apply(null, columSum));
+console.log(Math.min.apply(null, columSum));
 
 
