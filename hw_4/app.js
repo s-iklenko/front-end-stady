@@ -7,14 +7,17 @@
 5 элемент поменять с 6 и тд Если массив непарный - последний элемент не трогать.
 */
 var arr = [1, 2, 3, 4, 5, 6, 7];
-var result = [];
 for (var i = 1; i < arr.length; i += 2) {
-    result.push(arr[i], arr[i - 1]);
+    // result.push(arr[i], arr[i - 1]);
+    var tmp = arr[i - 1]
+    arr[i - 1] = arr[i]
+    arr[i] = tmp
 }
-if (arr.length % 2 !== 0) {
-    result.push(arr.length);
-}
-console.log(result);
+// if (arr.length % 2 !== 0) {
+//     result.push(arr.length);
+// }
+console.log(arr);
+
 
 /*
 2.task
