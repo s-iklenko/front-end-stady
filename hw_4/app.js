@@ -26,7 +26,6 @@ console.log(arr);
 Найти колонку, где сумма элементов найбольшая.
 */
 var array = [];
-var columsSumms = []
 
 for (var columIndex = 0, size = 3; columIndex < size; columIndex++) {
     array[columIndex] = new Array(size);
