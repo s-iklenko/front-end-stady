@@ -51,11 +51,54 @@ console.log(assignObjects({ x: 10 }, { x: 20, y: 30 }));
 assignObjects(obj1, obj2, ....., objn);
 */
 
-function assignObjects2(obj1, ...objn) {
-    var obj = {};
-    for (var key in obj1) { obj[key] = obj1[key]; }
-    for (var key in objn) { obj[key] = objn[key]; }
+
+function assignObjectsN(...objn) {
+    var obj = Object.assign(...objn);
     return obj;
 }
+console.log(assignObjectsN({ x: 10, y: 20 }, { z: 30, d: 12 }, { a: 15 }, { b: 35 }, { c: 45 }));
 
+
+
+// function assignObjects2(...objn) {
+//     var obj1 = {};
+
+//     for (var key in objn) {
+//         obj1[key] = objn[key];
+//         // var obj2 = {};
+//         // for (var key in obj1) {
+//         //     obj2[key] = obj1[key];
+//         // }
+//         // for (var key in obj1) {
+//         //     var obj2 = {};
+//         //     if (typeof obj1[key] === 'object') {
+//         //         convert(obj1[key]);
+//         //     } else {
+//         //         obj2[key] = obj1[key];
+//         //     }
+//         // }
+
+//     }
+//     return obj1
+// }
+// console.log(assignObjects2({ x: 10, y: 20 }, { z: 30, d: 12 }, { a: 15 }, { b: 35 }, { c: 45 }));
+
+
+function assignObjects2(...objn) {
+    var obj = {};
+    // var obj1 = {};
+
+    for (var key in objn) {
+        obj[key] = objn[key];
+        // for (var key in obj) {
+        //     if (typeof obj[key] === 'object') {
+        //         convert(obj[key]);
+        //     } else {
+        //         obj1[key] = obj[key]
+        //     }
+        // }
+    }
+    return obj
+}
 console.log(assignObjects2({ x: 10, y: 20 }, { z: 30, d: 12 }, { a: 15 }, { b: 35 }, { c: 45 }));
+
