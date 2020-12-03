@@ -1,18 +1,36 @@
-// const inputs = document.querySelectorAll('input');
-// const inputs = document.getElementsByTagName("input");
+const inputs = document.querySelectorAll('input');
+let textArea = document.querySelector('textarea');
 
-const input_1 = document.getElementById('inp1');
-const input_2 = document.getElementById('inp2');
-const input_3 = document.getElementById('inp3');
+function inp() {
+    let temp = '';
 
-const textArea = document.querySelector('textarea');
-
-setInterval(input_1.onblur = function () {
-    if (textArea.value = input_1.value) {
-        textArea.value += ', ' + input_2.value + ', ' + input_3.value;
+    for (let iterator of inputs) {
+        temp += `${iterator.value}, `;
     }
-}, 3000)
+    return temp
+}
 
+function putInTextArea() {
+    textArea.value = '';
+    textArea.value += inp().replace(/,\s*$/, "")
+
+    return textArea.value
+}
+
+setInterval(() => {
+    putInTextArea()
+}, 3000);
+
+
+
+
+
+
+
+
+
+
+// console.log(inputs)
 
 
 
